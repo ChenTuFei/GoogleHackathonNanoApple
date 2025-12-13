@@ -1,8 +1,5 @@
-============================================================
 Customer Churn Definition Document - BizGrow Q3 Churn Crisis
-============================================================
 
-Generated: 2025-12-13 17:17:54
 Context: Q3 churn rate spiked from 4% to 12%, need to identify single biggest churn driver
 
 
