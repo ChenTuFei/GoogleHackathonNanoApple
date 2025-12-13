@@ -5,8 +5,8 @@ Context: Q3 churn rate spiked from 4% to 12%, need to identify single biggest ch
 # EXECUTIVE SUMMARY
 
 
-CHURN DEFINITION FOR THIS CRISIS:
----------------------------------
+## CHURN DEFINITION FOR THIS CRISIS:
+
 Primary Definition: Customers whose contracts ended in Q3 2024 (July-September) 
                     and did not renew (renewed_flag = 0)
 
@@ -31,15 +31,12 @@ What We Are NOT Solving:
   - Product feature improvements (unless it's the main driver)
 
 
-============================================================
-I. CHURN DEFINITION METHODOLOGY EVALUATION
-============================================================
+# I. CHURN DEFINITION METHODOLOGY EVALUATION
 
 For this Q3 churn crisis, we evaluated multiple churn definition approaches:
 
 
-Method 1: Based on is_churned Field (Standard Definition)
-------------------------------------------------------------
+## Method 1: Based on is_churned Field (Standard Definition)
 Definition: Use the 'is_churned' field from Dataset1
   - is_churned = 1: Customer has churned
   - is_churned = 0: Customer has not churned
@@ -56,8 +53,7 @@ Disadvantages:
 Churned Customers: 364 (12.13%)
 
 
-Method 2: Q3 Contract Ended + Not Renewed (Time-Window Definition)
-------------------------------------------------------------
+## Method 2: Q3 Contract Ended + Not Renewed (Time-Window Definition)
 Definition: 
   - contract_end_date in Q3 2024 (2024-07-01 to 2024-09-30)
   - renewed_flag = 0 (not renewed)
@@ -74,8 +70,7 @@ Disadvantages:
 Use Case: Analyzing direct causes of Q3 churn crisis
 
 
-Method 3: Q3 Contract Ended + Marked as Churned (Combined Definition)
-------------------------------------------------------------
+## Method 3: Q3 Contract Ended + Marked as Churned (Combined Definition)
 Definition:
   - contract_end_date in Q3 2024
   - is_churned = 1
@@ -90,8 +85,8 @@ Disadvantages:
 Use Case: Conservative estimate of Q3 churn situation
 
 
-Method 4: Based on Usage Behavior Decline (Behavioral Definition)
-------------------------------------------------------------
+## Method 4: Based on Usage Behavior Decline (Behavioral Definition)
+
 Definition:
   - Q3-Q4 usage dropped > 50% compared to Q1-Q2
   - Or no login for 30 consecutive days
@@ -107,8 +102,8 @@ Disadvantages:
 Use Case: Churn early warning and intervention
 
 
-Method 5: Combined Definition (Contract + Behavior + Tickets)
-------------------------------------------------------------
+## Method 5: Combined Definition (Contract + Behavior + Tickets)
+
 Definition:
   - contract_end_date in Q3 2024
   - renewed_flag = 0
@@ -126,9 +121,7 @@ Disadvantages:
 Use Case: Deep analysis of churn causes and patterns
 
 
-============================================================
-II. SELECTED CHURN DEFINITION FOR THIS ANALYSIS
-============================================================
+# II. SELECTED CHURN DEFINITION FOR THIS ANALYSIS
 
 For the Q3 churn crisis, we adopt a **layered definition strategy**:
 
@@ -149,8 +142,7 @@ Data Limitations:
   - Contract end date data is complete and can be used for this definition
 
 
-Supporting Definition: Method 1 - Based on is_churned Field
-------------------------------------------------------------
+# Supporting Definition: Method 1 - Based on is_churned Field
 Purpose:
 1. Validate results from primary definition
 2. Analyze historical churn trends (Q3 vs historical)
@@ -160,9 +152,7 @@ Calculation Formula:
   Overall Churn Rate = (is_churned = 1 customers / Total customers) x 100%
 
 
-============================================================
-III. CHURN IDENTIFICATION CRITERIA (Primary Definition)
-============================================================
+# III. CHURN IDENTIFICATION CRITERIA (Primary Definition)
 
 Q3 Churned Customer Characteristics:
   - contract_end_date between 2024-07-01 and 2024-09-30
@@ -175,19 +165,15 @@ Exclusions:
   - contract_end_date not in Q3 (historical or future churn)
 
 
-============================================================
-IV. CHURN RATE CALCULATIONS
-============================================================
+# IV. CHURN RATE CALCULATIONS
 
 1. Q3 Churn Rate (Primary Metric)
-------------------------------------------------------------
   Q3 Churn Rate = Q3 Churned Customers / Total Customers x 100%
   
   Purpose: Quantify severity of Q3 crisis
 
 
 2. Overall Churn Rate (Reference Metric)
-------------------------------------------------------------
   Overall Churn Rate = Total Churned Customers / Total Customers x 100%
   Current Overall Churn Rate: 12.13%
   
@@ -195,14 +181,11 @@ IV. CHURN RATE CALCULATIONS
 
 
 3. Churn Rate by Dimension (Diagnostic Metric)
-------------------------------------------------------------
   Calculate churn rate by acquisition channel, product tier, sales segment, etc.
   Purpose: Identify 80/20 driver (which segment has highest churn rate)
 
 
-============================================================
-V. WHAT WE ARE SOLVING VS NOT SOLVING
-============================================================
+# V. WHAT WE ARE SOLVING VS NOT SOLVING
 
 What We Are Solving:
   - Root cause of Q3 churn spike (from 4% to 12%)
@@ -216,9 +199,7 @@ What We Are NOT Solving:
   - Product feature improvement suggestions (unless it's the main driver)
 
 
-============================================================
-VI. DATA NOTES AND LIMITATIONS
-============================================================
+# VI. DATA NOTES AND LIMITATIONS
 
 Data Field Descriptions:
   - contract_end_date: Contract end date (null = still under contract)
@@ -236,9 +217,7 @@ Handling Approach:
   - Ticket missing: Filled with 0, indicating no tickets
 
 
-============================================================
-VII. RATIONALE FOR CHURN DEFINITION SELECTION
-============================================================
+# VII. RATIONALE FOR CHURN DEFINITION SELECTION
 
 Why choose "Q3 Contract Ended + Not Renewed" as primary definition?
 
@@ -262,6 +241,3 @@ Why choose "Q3 Contract Ended + Not Renewed" as primary definition?
    - Enables dimension-based grouping analysis
 
 
-============================================================
-DOCUMENT END
-============================================================
