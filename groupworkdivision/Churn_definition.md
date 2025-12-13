@@ -2,7 +2,7 @@ Customer Churn Definition Document - BizGrow Q3 Churn Crisis
 
 Context: Q3 churn rate spiked from 4% to 12%, need to identify single biggest churn driver
 
-EXECUTIVE SUMMARY
+# EXECUTIVE SUMMARY
 
 
 CHURN DEFINITION FOR THIS CRISIS:
