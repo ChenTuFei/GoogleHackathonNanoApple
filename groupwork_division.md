@@ -103,7 +103,7 @@
 
 ## Detailed Division of Labor (5-Person Team)
 
-### Member 1: Data Engineer + Churn Definition Lead
+### Member 1: Data Engineer + Churn Definition Lead_JasmineChen
 
 **Primary Responsibilities**:
 - Data loading, cleaning, merging
