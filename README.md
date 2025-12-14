@@ -73,4 +73,3 @@ Q3 Monthly Breakdown (Churned / Active at Start of Month):
 - Average onboarding score of Q3 churned: 6.19
 
 
-======================================================================
